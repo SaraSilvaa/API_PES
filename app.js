@@ -9,6 +9,10 @@ app.use(express.json());
 const contatoRouter = require('./routes/contatoRoutes');
 app.use('/contatos', contatoRouter);
 
+app.use((req,res,next)=>{
+  res.status(404).json({"message":"rota não definida"})
+})
+
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

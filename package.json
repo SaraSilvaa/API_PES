@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node app.js",
-    "test": "jest --detectOpenHandles --forceExit"
+    "test": "jest --forceExit"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
