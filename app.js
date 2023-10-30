@@ -6,8 +6,8 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const contatoRouter = require('./routes/contatoRoutes');
-app.use('/contatos', contatoRouter);
+const repositorioRouters = require('./routes/repositorioRouters');
+app.use('/repositorio', repositorioRouters);
 
 app.use((req,res,next)=>{
   res.status(404).json({"message":"rota não definida"})

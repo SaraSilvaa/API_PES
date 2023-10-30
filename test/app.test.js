@@ -10,15 +10,20 @@ describe('Testes de Rotas de Contatos', () => {
 
   it('Deve criar um novo contato com campos válidos (POST /contatos)', async () => {
     const newContact = {
-      nome: 'John Doe',
-      email: 'johndoe@example.com',
-      telefone: '123-456-7890',
-      endereco: '123 Main St',
-      foto: 'john.jpg',
+      tipoAutomovel: 'Onix',
+      placa: '85120sda',
+      cpfcnpj: '123-456-7890',
+      status: 'Ativo',
+      tempoEntrada: '11:20',
+      tempoSaida: '12:19',
+      valor: '10,00',
+
+
+      
     };
 
     const response = await request(app)
-      .post('/contatos')
+      .post('/repositorios')
       .send(newContact);
 
     expect(response.statusCode).toEqual(201);
