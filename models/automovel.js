@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const contatoSchema = new mongoose.Schema({
+const automovelSchema = new mongoose.Schema({
   tipoAutomovel: {
     type: String,
     required: true,
@@ -31,6 +31,6 @@ const contatoSchema = new mongoose.Schema({
   },
 });
 
-const Repositorio = mongoose.model('Repositorio', contatoSchema);
+const Automovel = mongoose.model('automoveis', automovelSchema);
 
-module.exports = Repositorio;
+module.exports = Automovel;

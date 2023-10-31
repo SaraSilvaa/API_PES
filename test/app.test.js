@@ -2,14 +2,14 @@ const request = require('supertest');
 const app = require('../app'); // Certifique-se de que o caminho esteja correto
 
 describe('Testes de Rotas de Contatos', () => {
-  it('Deve listar todos os contatos (GET /contatos)', async () => {
-    const response = await request(app).get('/contatos');
+  it('Deve listar todos os contatos (GET /automoveis)', async () => {
+    const response = await request(app).get('/automoveis');
     expect(response.statusCode).toEqual(200);
     expect(response.body).toBeInstanceOf(Array);
   });
 
-  it('Deve criar um novo contato com campos válidos (POST /contatos)', async () => {
-    const newContact = {
+  it('Deve criar um novo contato com campos válidos (POST /carros)', async () => {
+    const newAutomovel = {
       tipoAutomovel: 'Onix',
       placa: '85120sda',
       cpfcnpj: '123-456-7890',
@@ -23,23 +23,23 @@ describe('Testes de Rotas de Contatos', () => {
     };
 
     const response = await request(app)
-      .post('/repositorios')
-      .send(newContact);
+      .post('/automoveis')
+      .send(newAutomovel);
 
     expect(response.statusCode).toEqual(201);
     expect(response.body).toHaveProperty('_id');
   });
 
   it('Deve retornar erro ao criar um novo contato com campos inválidos (POST /contatos)', async () => {
-    const invalidContact = {
-      telefone: '123-456-7890',
-      endereco: '123 Main St',
-      foto: 'john.jpg',
+    const invalidAutomovel = {
+      tipoAutomovel: 'Onix',
+      placa: '85120sda',
+      cpfcnpj: '123-456-7890',
     };
 
     const response = await request(app)
-      .post('/contatos')
-      .send(invalidContact);
+      .post('/automoveis')
+      .send(invalidAutomovel);
 
     expect(response.statusCode).toEqual(400);
     expect(response.body).toHaveProperty('message');
