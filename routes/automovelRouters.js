@@ -19,7 +19,7 @@ router.get('/:id', getAutomovel, (req, res) => {
 
 // Rota para criar um novo contato
 router.post('/', async (req, res) => {
-  const automovel = new automoveis({
+  const automovel = new Automovel({
     tipoAutomovel: req.body.tipoAutomovel,
     placa: req.body.placa,
     cpfcnpj: req.body.cpfcnpj,
