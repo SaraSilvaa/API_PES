@@ -1,10 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const automovelRouters = require('./routes/automovelRouters');
 app.use('/automovel', automovelRouters);
@@ -24,8 +27,7 @@ db.once('open', () => {
   console.log('Conectado ao MongoDB Atlas!');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor iniciado na porta ${port}`);
 });
-module.exports=app;
