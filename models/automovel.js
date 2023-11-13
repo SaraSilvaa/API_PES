@@ -21,9 +21,13 @@ const automovelSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tempoSaida: {
+    Data: {
     type: String,
     required: true,
+  },
+  tempoSaida: {
+    type: String,
+    required: false,
   },
   valor: {
     type: String,
