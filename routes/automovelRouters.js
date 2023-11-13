@@ -25,6 +25,7 @@ router.post('/', async (req, res) => {
     cpfcnpj: req.body.cpfcnpj,
     status: req.body.status,
     tempoEntrada: req.body.tempoEntrada,
+    data: req.body.data,
     tempoSaida: req.body.tempoEntrada,
     valor: req.body.valor,
   });
@@ -54,6 +55,10 @@ router.put('/:id', getAutomovel, async (req, res) => {
   if (req.body.tempoEntrada != null) {
     res.automovel.tempoEntrada = req.body.tempoEntrada;
   }
+    if (req.body.data != null) {
+    res.automovel.data = req.body.data;
+  }
+
   if (req.body.tempoSaida != null) {
     res.automovel.tempoSaida = req.body.tempoSaida;
   }
