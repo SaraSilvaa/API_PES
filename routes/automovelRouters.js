@@ -88,7 +88,7 @@ router.delete('/:id', getAutomovel, async (req, res) => {
 async function getAutomovel(req, res, next) {
   try {
     const automovel = await Automovel.findById(req.params.id);
-    if (contato == null) {
+    if (automovel == null) {
       return res.status(404).json({ message: 'Contato não encontrado' });
     }
     res.automovel = automovel;
