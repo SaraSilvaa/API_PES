@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     status: req.body.status,
     tempoEntrada: req.body.tempoEntrada,
     data: req.body.data,
-    tempoSaida: req.body.tempoEntrada,
+    tempoSaida: req.body.tempoSaida,
     valor: req.body.valor,
   });
 
